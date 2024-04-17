@@ -4,6 +4,8 @@ from rest_framework import permissions, viewsets
 from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
 
 # so basically these classes are API endpoints that allows user or group to be edited or viewed
+
+#  why ViewSEt? rather than write multiple views we are grouping together all common behaviour into classes called ViewSet
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
